@@ -12,6 +12,7 @@ import {
 } from 'draft-js';
 import { Editor } from '../src';
 import styles from './styles.css'; // eslint-disable-line no-unused-vars
+import 'antd/dist/antd.less'; 
 
 class TestOption extends Component {
   render() {

@@ -20,7 +20,7 @@ const devConfigs = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: /draftjs-to-markdown\.js$|immutable\.js$|draftjs-utils\.js$|draftjs-to-html\.js$|lodash\.js$/,
+        exclude: /node_modules|draftjs-to-markdown\.js$|immutable\.js$|draftjs-utils\.js$|draftjs-to-html\.js$|lodash\.js$/,
       },
       {
         test: /\.css$/,
@@ -29,6 +29,7 @@ const devConfigs = {
           use: "css-loader?modules&importLoaders=1&localIdentName=[local]!postcss-loader"
         }),
       },
+      { test: /\.less$/, loader: "style-loader!css-loader!less-loader" },
       { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' },
       {
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,

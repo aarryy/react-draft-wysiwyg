@@ -39,7 +39,7 @@ module.exports = {
   ],
   module: {
     loaders: [
-      { test: /\.js$/, loader: 'babel-loader', exclude: /immutable\.js$|draftjs-utils\.js$/ },
+      { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules|immutable\.js$|draftjs-utils\.js$/ },
       {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract({
@@ -47,6 +47,7 @@ module.exports = {
           use: "css-loader?modules&importLoaders=1&localIdentName=[local]!postcss-loader"
         }),
       },
+      { test: /\.less$/, loader: "style-loader!css-loader!less-loader" },
       { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' },
       {
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
